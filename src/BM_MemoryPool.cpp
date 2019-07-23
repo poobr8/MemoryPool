@@ -2,6 +2,7 @@
 #include "Coordinates.cpp"
 #include "MemoryPool.cpp"
 
+// Benchmarking the alloc method in MemoryPool
 static void BM_Allocation(benchmark::State& state) {
     MemoryPool<Coordinates> memoryPool;
 
@@ -11,6 +12,7 @@ static void BM_Allocation(benchmark::State& state) {
 
 BENCHMARK(BM_Allocation);
 
+// Benchmarking the free method in MemoryPool
 static void BM_Free(benchmark::State& state) {
     MemoryPool<Coordinates> memoryPool;
     Coordinates* ptr = memoryPool.alloc();
