@@ -1,3 +1,5 @@
+// Utitlity class to be used for testing MemoryPool
+// This class should hold 8 bytes of memory since there are two integers
 class Coordinates {
 private:
     int x;
