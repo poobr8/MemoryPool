@@ -63,9 +63,10 @@ MemoryPool<ELEM_TYPE>::~MemoryPool() {
 }
 
 /**
- * Allocates memory to the elements of the MemoryPool Class
+ * Allocates memory for the element
+ * If there are free slots available then we use them first before allocating new memory.
  * @tparam ELEM_TYPE the element type
- * @return ptr - pointer to the allocated memory
+ * @return the pointer to the allocated memory
  */
 template<class ELEM_TYPE>
 ELEM_TYPE* MemoryPool<ELEM_TYPE>::alloc() {
@@ -82,9 +83,9 @@ ELEM_TYPE* MemoryPool<ELEM_TYPE>::alloc() {
 }
 
 /**
- * Deallocates the memory of element of the MemoryPool Class
- * @tparam ELEM_TYPE
- * @param ptr
+ * Deallocates the memory of element and puts the available memory in the free slots
+ * @tparam ELEM_TYPE the element type
+ * @param ptr the pointer to the allocated memory
  */
 template<class ELEM_TYPE>
 void MemoryPool<ELEM_TYPE>::free(ELEM_TYPE *ptr) {
@@ -97,8 +98,8 @@ void MemoryPool<ELEM_TYPE>::free(ELEM_TYPE *ptr) {
 }
 
 /**
- *
- * Function to get the CurrentUsage of the MemoryPool
+ * Gets the current usage in terms of number bytes in the MemoryPool
+ * @return the size in number of bytes
  */
 template<class ELEM_TYPE>
 uint32_t MemoryPool<ELEM_TYPE>::getCurrentUsage() {
@@ -106,8 +107,8 @@ uint32_t MemoryPool<ELEM_TYPE>::getCurrentUsage() {
 }
 
 /**
- *
- * Function to get the number of available slots of the MemoryPool
+ * Returns the number of free slots in the MemoryPool at a given time
+ * @return the number of free slots
  */
 template <class ELEM_TYPE>
 uint32_t MemoryPool<ELEM_TYPE>::getAvailableSlots() {
