@@ -29,5 +29,5 @@ $ ./build/ThreadSafeMemoryPoolBenchmark
 ## Execute the unit tests
 
 ```
-$ ./build/ThreadSafeMemoryPoolTests
+$ ./build/ThreadSafeMemoryPoolTest
 ```
